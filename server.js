@@ -18,7 +18,7 @@ app.set("view engine", "handlebars");
 
 var mysql = require("mysql");
 
-if (process.env.JAWSDB_url){
+if (process.env.JAWSDB_URL){
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
   connection = mysql.createConnection({
