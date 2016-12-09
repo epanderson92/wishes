@@ -2,7 +2,8 @@ var express = require("express");
 var bodyParser = require("body-parser");
 
 var app = express();
-var port = 3000;
+var port = process.env.PORT || 3000;
+console.log(port);
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(__dirname + "/public"));
@@ -28,11 +29,7 @@ if (process.env.JAWSDB_url){
   });
 };
 
-var connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "root",
-  database: "wishes_db" });
+
 
 connection.connect(function(err) {
   if (err) {
