@@ -2,7 +2,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 
 var app = express();
-var port = process.env.PORT || 3000;
+var port = 3000;
 console.log(port);
 
 // Serve static content for the app from the "public" directory in the application directory.
@@ -78,4 +78,4 @@ app.post("/create", function(req, res) {
 
 });
 
-app.listen(port);
+app.listen(process.env.PORT || port);
